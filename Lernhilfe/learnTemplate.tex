@@ -6,6 +6,7 @@
 \usepackage[paper=a4paper,left=20mm,right=20mm,top=25mm,bottom=25mm]{geometry}
 \usepackage{enumitem}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{dsfont}
 \usepackage{float}
 \usepackage{graphicx}
@@ -28,7 +29,11 @@
 
 %Radiobuttons
 \newcommand{\radio}{\ooalign{\hidewidth$\bullet$\hidewidth\cr$\ocircle$}}
-\newcommand{\wbigcup}{\mathop{\widetilde{\bigcup}}\displaylimits}
+\newcommand{\wbigcup}{\mathop{\bigcup}\displaylimits}
+
+\newcommand*\answer[1]{\ifanswers \multicolumn{3}{l}{\textcolor{red}{#1}}\fi \\}
+\newcommand{\true}{\textcolor{green}{$\checkmark$}}
+\newcommand{\false}{\textcolor{red}{$\times$}}
 
 \newcommand{\soon}{\large{$comming~ soon^{_{TM}}$\\}}
 
@@ -39,100 +44,136 @@
 % ===== START HERE!! =======
 % ==========================
 \title{ \textbf{Lernhilfe}}
-\setcounter{section}{1} % Nummer des Aufgabenblattes
+\setcounter{section}{0} % Nummer des Aufgabenblattes
 
 \begin{document}	 
 	\maketitle	 %Some Vodoo-magic
 	
-	% \ifanswers \radio \else $\ocircle$ \fi  % Punkt in richtigerb Antwort
-	\subsection{wahr - falsch - Fragen}
-	\begin{tabular}{ccp{0.9\textwidth}}
+	% \ifanswers \radio \else $\ocircle$ \fi  % Punkt in richtiger Antwort
+	\section{wahr - falsch - Fragen}
+	\begin{tabular}{ccp{0.85\textwidth}}
 		\textbf{wahr} & \textbf{falsch} & ~ \\
-		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & \textit{Beispielfrage, falsch ist richtig} \\
-		\ifanswers \multicolumn{3}{l}{\textcolor{red}{Begr\"undung der Antwort}} \\ \fi \\
-		$\ocircle$ & $\ocircle$ & Falls $P \not= NP$, so gibt es keinen Polynomialzeitalgorithmus, der f\"ur das Knotenf\"arbungsproblem	Approximationsg\"ute kleiner als $\frac{4}{3}$ erreicht.\\
-		$\ocircle$ & $\ocircle$ & Die Klasse der deterministisch kontextfreien Sprachen ist unter Komplementbildung nicht abgeschlossen\\
-		$\ocircle$ & $\ocircle$ & Jede \textbf{while}-berechenbare Funktion ist auch \textbf{loop}-berechenbar\\
-		$\ocircle$ & $\ocircle$ & FPTAS $\subseteq$ APX\\
+%		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & \textit{Beispielfrage, falsch ist richtig} \\
+%		\ifanswers \multicolumn{3}{l}{\textcolor{red}{Begr\"undung der Antwort}} \fi \\ \\
+		
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Falls $P \not= NP$, so gibt es keinen Polynomialzeitalgorithmus, der f\"ur das Knotenf\"arbungsproblem	Approximationsg\"ute kleiner als $\frac{4}{3}$ erreicht.\\ 
+		\answer{wenn das gehen würde hätte man einen PTIME Algorithmus gefunden für 3-Coloring $\Rightarrow$ P=NP} 
+		
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Die Klasse der deterministisch kontextfreien Sprachen ist unter Komplementbildung nicht abgeschlossen \\
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Jede \textbf{while}-berechenbare Funktion ist auch \textbf{loop}-berechenbar\\
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & FPTAS $\subseteq$ APX\\
 		$\ocircle$ & $\ocircle$ & In jeder Kleene Algebra K gilt a** = a* f¨ur alle a $\in \mathds{K}$.\\
 %		$\ocircle$ & $\ocircle$ & Es gibt eine regul\"are Sprache L, so dass LL $\not=$ L.\\
 		$\ocircle$ & $\ocircle$ & Es gibt eine regul\"are Sprache L*, sodass L*L* $\not= $ L* \\
 		$\ocircle$ & $\ocircle$ & F\"ur jede von einer rechtslinearen Grammatik erzeugte Sprache L besitzt $\approx_L$ unendlich viele \"Aquivalenzklassen\\
 		$\ocircle$ & $\ocircle$ & Die Klasse der kontextfreien Sprachen ist abgeschlossen unter Substitution durch regul\"are Sprachen\\
-		$\ocircle$ & $\ocircle$ & In jeder Kleene Algebra $\mathds{K}$ gilt 1 + a* = a* f\"ur alle $a \in \mathds{K}$\\
-		$\ocircle$ & $\ocircle$ & Das Halteproblem ist festparameterhandhabbar\\
-		$\ocircle$ & $\ocircle$ & Jede \textbf{loop}-berechenbare Funktion ist auch durch eine Grammatik berechenbar.\\
-		$\ocircle$ & $\ocircle$ & Es gibt \textbf{while}-berechenbare Funktionen, die nicht Turing-berechenbar sind.\\
-		$\ocircle$ & $\ocircle$ & Es gibt regul\"are Sprachen, die nicht deterministisch kontextfrei sind.\\
-		$\ocircle$ & $\ocircle$ & F\"ur jede Sprache L stimmen die \"Aquivalenzklassen von $\approx_L$ mit denen von $\approx_L$ \"uberein.\\
-		$\ocircle$ & $\ocircle$ & Der Schnitt zweier deterministisch kontextfreier Sprachen ist stets eine kontextfreie Sprache.\\
-		$\ocircle$ & $\ocircle$ & Es gibt \textbf{loop}-berechenbare Funktionen, die nicht durch eine Grammatik berechenbar sind.\\
-		$\ocircle$ & $\ocircle$ & Es gibt deterministisch kontextfreie Sprachen, die nicht in NP enthalten sind.\\
-		$\ocircle$ & $\ocircle$ & Es gibt Funktionen, die nicht primitiv rekursiv sind.\\
-		$\ocircle$ & $\ocircle$ & PSPACE = NPSPACE.\\
-		$\ocircle$ & $\ocircle$ & Die Sprache POSITIVE-3-SAT = \{$\langle\Phi\rangle$| $\Phi$ ist eine Boolesche Formel in konjunktiver Normalform, in der alle Klauseln aus genau 3 Literalen bestehen und in der keine Variable negiert vorkommt und f\"ur die es eine erf\"ullende Belegung der Variablen gibt\} ist eine NP-vollst\"andige Sprache.\\
-		$\ocircle$ & $\ocircle$ & Die Klasse der deterministisch kontextfreien Sprachen ist abgeschlossen unter Schnitt.\\
-		$\ocircle$ & $\ocircle$ & Jede \textbf{while}-berechenbare Funktion ist eine primitiv rekursive Funktion.\\
-		$\ocircle$ & $\ocircle$ & PO $\subseteq$ APX.\\
-		$\ocircle$ & $\ocircle$ & Es gibt ein Alphabet $\sum$ und Sprachen M,N $\subseteq \sum^*$, so dass $(M^*N)^*M^*$ $\not=$ $(M \bigcup N)^*$.\\
-		$\ocircle$ & $\ocircle$ & Jede durch eine Grammatik berechenbare Funktion ist \textbf{loop}-berechenbar.\\
-		$\ocircle$ & $\ocircle$ & Es gibt berechenbare Funktionen, die nicht primitiv rekursiv sind.\\
-		$\ocircle$ & $\ocircle$ & SET-COVER $\in$ PSPACE\\
-		$\ocircle$ & $\ocircle$ & MAX-CUT $\preceq_P$ TQBF\\
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & In jeder Kleene Algebra $\mathds{K}$ gilt 1 + a* = a* f\"ur alle $a \in \mathds{K}$\\
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Das Halteproblem ist festparameterhandhabbar\\
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Jede \textbf{loop}-berechenbare Funktion ist auch durch eine Grammatik berechenbar.\\
+		\answer{Gramatikberechenbar $\Rightarrow$ while-berechenbar also auch loop}
 		
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Es gibt \textbf{while}-berechenbare Funktionen, die nicht Turing-berechenbar sind.\\
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Es gibt regul\"are Sprachen, die nicht deterministisch kontextfrei sind.\\
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & F\"ur jede Sprache L stimmen die \"Aquivalenzklassen von $\approx_L$ mit denen von $\approx_{\overline{L}}$ \"uberein.\\ 
+		\answer{s. \"Ubung 12.3}
+		
+		$\ocircle$ & $\ocircle$ & Der Schnitt zweier deterministisch kontextfreier Sprachen ist stets eine kontextfreie Sprache.\\
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Es gibt \textbf{loop}-berechenbare Funktionen, die nicht durch eine Grammatik berechenbar sind.\\
+		\answer{Gramatikberechenbar $\leftrightarrow$ while-berechenbar \textgreater loop-berechenbar}
+		
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Es gibt deterministisch kontextfreie Sprachen, die nicht in NP enthalten sind.\\
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Es gibt Funktionen, die nicht primitiv rekursiv sind.\\	
+		\answer{Ackermann-Funktion}
+		
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & PSPACE = NPSPACE.\\
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Die Sprache POSITIVE-3-SAT = \{$\langle\Phi\rangle$| $\Phi$ ist eine Boolesche Formel in konjunktiver Normalform, in der alle Klauseln aus genau 3 Literalen bestehen und in der keine Variable negiert vorkommt und f\"ur die es eine erf\"ullende Belegung der Variablen gibt\} ist eine NP-vollst\"andige Sprache.\\ 
+		\answer{positiv-3-sat liegt in P, dann wäre P = NP}
+		
+		$\ocircle$ &\ifanswers \radio \else $\ocircle$ \fi & Die Klasse der deterministisch kontextfreien Sprachen ist abgeschlossen unter Schnitt.\\		
 	\end{tabular}
 \newpage ~\\
 	\begin{tabular}{ccp{0.9\textwidth}}
 		\textbf{wahr} & \textbf{falsch} & ~ \\
-		$\ocircle$ & $\ocircle$ & Die Klasse der kontextfreien Sprachen ist abgeschlossen unter Quotientenbildung.\\
+		
+		$\ocircle$ & $\ocircle$ & Jede \textbf{while}-berechenbare Funktion ist eine primitiv rekursive Funktion.\\
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & PO $\subseteq$ APX.\\
+		$\ocircle$ & $\ocircle$ & Es gibt ein Alphabet $\sum$ und Sprachen M,N $\subseteq \sum^*$, so dass $(M^*N)^*M^*$ $\not=$ $(M \bigcup N)^*$.\\
+		$\ocircle$ & $\ocircle$ & Jede durch eine Grammatik berechenbare Funktion ist \textbf{loop}-berechenbar.\\
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Es gibt berechenbare Funktionen, die nicht primitiv rekursiv sind.\\
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & SET-COVER $\in$ PSPACE\\ 
+		\answer{NP $\subseteq$ PSPACE}
+		
+		$\ocircle$ & $\ocircle$ & MAX-CUT $\preceq_P$ TQBF\\
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Die Klasse der kontextfreien Sprachen ist abgeschlossen unter Quotientenbildung.\\
 		$\ocircle$ & $\ocircle$ & Es gibt deterministisch kontextfreie Sprachen, die nicht in PSPACE enthalten sind.\\
-		$\ocircle$ & $\ocircle$ & Falls B $\in$ PSPACE und A $\preceq_P$ B, so gilt auch A $\in$ PSPACE.\\
-		$\ocircle$ & $\ocircle$ & Die Ackermann-Peter Funktion ist primitiv rekursiv.\\
-		$\ocircle$ & $\ocircle$ & Jede durch eine Grammatik berechenbare Funktion ist auch \textbf{loop}-berechenbar.\\
-		$\ocircle$ & $\ocircle$ & Es gibt zwei regul¨are Sprachen, deren Vereinigung nicht deterministisch kontextfrei ist.\\
-		$\ocircle$ & $\ocircle$ & Sei $\sum = \{a, b\}$ und sei $L = \{a^nb^n | n \geq 1\}$. Dann ist $[a]_{\approx_L} = \mathcal{L}(a^∗)$.\\
-		$\ocircle$ & $\ocircle$ & Sei $L = \{a^nb^n | n \geq 1\}$. Dann ist $a^8b^{17}a^9 \in cyc(L).$\\
-		$\ocircle$ & $\ocircle$ & Die Sprache {$a^ib^ic^k | i, k \geq 1$} $\bigcup$ {$b^jc^j | j \geq $} ist deterministisch kontextfrei.\\
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Falls B $\in$ PSPACE und A $\preceq_P$ B, so gilt auch A $\in$ PSPACE.\\ 
+		\answer{man kann alles aus A in PTime in B umwandeln und kann das dann in PSpace lösen}
+		
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Die Ackermann-Peter Funktion ist primitiv rekursiv.\\
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Jede durch eine Grammatik berechenbare Funktion ist auch \textbf{loop}-berechenbar.\\ 
+		\answer{Gramatik-berechenbar $\leftrightarrow$ while-berechenbar \textgreater loop-berechenbar}
+		
+		$\ocircle$ & $\ocircle$ & Es gibt zwei regul\"are Sprachen, deren Vereinigung nicht deterministisch kontextfrei ist.\\
+		$\ocircle$ & $\ocircle$ & Sei $\sum = \{a, b\}$ und sei $\mathcal{L} = \{a^nb^n | n \geq 1\}$. Dann ist $[a]_{\approx_L} = \mathcal{L}(a^∗)$.\\
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Sei $L = \{a^nb^n | n \geq 1\}$. Dann ist $a^8b^{17}a^9 \in cyc(L).$\\ 
+		\answer{weil $a^{17} b^{17} = w_1w_2, w_2= a^8 b^{17}, w_1=a^9, cyc(L)=\{ w_2w_1 | w_1w_2 \in L\}$}
+		
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Die Sprache \{$a^ib^ic^k | i, k \geq 1$\} $\bigcup$ \{$b^jc^j | j \geq $\} ist deterministisch kontextfrei.\\ 
+		\answer{dafür kann man einen deterministischen Kellerautomaten angeben}
+		
 		$\ocircle$ & $\ocircle$ & NAE-3-SAT $\in$ NPSPACE.\\
-		$\ocircle$ & $\ocircle$ & Jede $\mu$-rekursive Funktion ist eine \textbf{loop}-berechenbare Funktion.\\
-		$\ocircle$ & $\ocircle$ & Falls L eine PSPACE-vollst\"andige Sprache ist, so ist L auch NP-hart.\\
-		$\ocircle$ & $\ocircle$ & Falls L deterministisch kontextfrei ist, so ist auch $L^R$ deterministisch kontextfrei.\\
-		$\ocircle$ & $\ocircle$ & F¨ur jede \textbf{while}-berechenbare Funktion gibt es ein \textbf{while}-Programm mit nur einer \textbf{while}-Schleife.\\
-		$\ocircle$ & $\ocircle$ & Die Klasse der deterministisch kontextfreien Sprachen ist abgeschlossen unter Vereiningung.\\
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Jede $\mu$-rekursive Funktion ist eine \textbf{loop}-berechenbare Funktion.\\
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Falls L eine PSPACE-vollst\"andige Sprache ist, so ist L auch NP-hart.\\ 
+		\answer{NP $\subseteq$ PSPACE}
+		
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Falls L deterministisch kontextfrei ist, so ist auch $L^R$ deterministisch kontextfrei.\\
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & F¨ur jede \textbf{while}-berechenbare Funktion gibt es ein \textbf{while}-Programm mit nur einer \textbf{while}-Schleife.\\
+		$\ocircle$ &\ifanswers \radio \else $\ocircle$ \fi & Die Klasse der deterministisch kontextfreien Sprachen ist abgeschlossen unter Vereiningung.\\
 		$\ocircle$ & $\ocircle$ & Es gibt eine (totale) berechenbare Funktion, die nicht primitiv rekursiv ist.\\
-		$\ocircle$ & $\ocircle$ & F\"ur w$\in${0,1} sei K(w) die Kolmogorov-Komplexit\"at von w. Es gibt ein n $\in$ N, so dass f\"ur alle w $\in$ \{0, 1\} mit$ |w| \geq n$ gilt: $K(w) \leq 2|w|$\\
-		$\ocircle$ & $\ocircle$ & Es gibt eine (totale) berechenbare Funktion, die nicht primitiv rekursiv ist.\\
+		$\ocircle$ & $\ocircle$ & F\"ur w$\in$\{0,1\} sei K(w) die Kolmogorov-Komplexit\"at von w. Es gibt ein n $\in$ N, so dass f\"ur alle w $\in$ \{0, 1\} mit$ |w| \geq n$ gilt: $K(w) \leq 2|w|$\\
 %		$\ocircle$ & $\ocircle$ & \\
 	\end{tabular}
 	% Solution
+	\begin{table}[b!]
+		\centering
+		\caption{Abschlusseigenschaften verschiedener Sprachen}
+		\begin{tabular}{l|ccccccc}
+			~ & Kompl. & Schnitt & Vereing. & Konkat. & Kleene-* & Spiegel. & Differenz \\
+			Sprache (Abk.) & $\overline{L}$ & $\cap$ & $\cup$ & $\cdot$ & $\ast$ & $L^R$ & $L_1/L_2$ \\ \hline
+			regul\"ar (R) & \true & \true & \true & \true & \true & \true & \true \\
+			det. kontextfrei (dCF) & \true & \false (R) & \false & \false & \false & \false & \false  \\
+			kontextfrei (CF) & \false & \false (R) & \true & \true & \true  & \true & \false \\
+			kontextsensitiv (CS) & \true & \true & \true & \true & \true & ? & ? \\
+			rekursiv aufz\"ahlbar (RE) & \false & \true & \true & \true & \true & ? & ? \\
+		\end{tabular}
+	\end{table}
 	
-	\subsection{Reduktion}
 	
-	\subsubsection{Zeigen Sie, dass die Sprache LARGEST-SIMPLE-CYCLE = $\{\langle G,k\rangle$ | G ist ein einfacher ungerichteter Graph, der einen einfachen Kreis mit $k$ Knoten besitzt\} eine NP-vollst\"andige Sprache ist. Sie d\"urfen dabei alle NPvollst\"andigen Sprachen benutzen, von denen wir in den Vorlesungen und den \"Ubungen nachgewiesen haben,	dass sie NP-vollst\"andig sind.}
-	~
-	\subsubsection{Zeigen Sie, dass SET-COVER = $\{\langle U,\mathcal{F},k\rangle | \exists \mathcal{C} \subseteq \mathcal{F}, |\mathcal{C}| = k, mit \wbigcup_{c \in \mathcal{C}} = U\}$ NP-vollst\"andig ist.\\ Hinweis: Reduzieren Sie VERTEX-COVER auf SET-COVER.}
-	~
-	\subsubsection{Ein Hamilton-Pfad ist ein einfacher Pfad, bei dem jeder Knoten eines Graphen genau einmal besucht wird. Die Sprache HAMILTON-PFAD = \{$\langle G\rangle$ | G ist ein einfacher ungerichteter Graph, der einen Hamilton-Pfad besitzt\} ist NP-vollst\"andig. Zeigen Sie, dass die Sprache LONGEST-PATH = \{$\langle G,k\rangle$ | G ist ein einfacher ungerichteter Graph, der einen einfachen Pfad der L\"ange mindestens $k$ besitzt\} eine NP-vollst\"andige Sprache ist.}
-	~
-	\subsubsection{Zeigen Sie, dass die Sprache SET-SPLITTING = \{$\langle S,C\rangle$ | S ist eine endliche Menge und C = \{$C_1$, . . . ,$C_k$\} ist	eine Familie von $k$ \textgreater 0 Teilmengen von S und man kann die Elemente von S jeweils weiß oder blau einf\"arben, so dass in keiner Teilmenge $C_i$ aus C alle Elemente die gleiche Farbe haben\} eine NP-vollst\"andige Sprache ist, indem Sie NAE-3-SAT auf SET-SPLITTING reduzieren.}
-	~
-	\subsubsection{Sei HALF-CLIQUE = \{$\langle G\rangle$ | G = (V,E) ist ein ungerichteter Graph und es gibt eine Teilmenge $V' \subseteq V mit |V'| \geq \frac{|V|}{2} $, so dass f\"ur alle $v_i , v_j \in V', v_i \not= v_j $ gilt, dass die Kante zwischen $v_i$ und $v_j$ zu E geh\"ort\}. Zeigen Sie, dass HALF-CLIQUE eine NP-vollst\"andige Sprache ist.\\ Hinweis: Zeigen Sie CLIQUE $\preceq_P$ HALF-CLIQUE.}
-	~
-	\subsubsection{Sei G = (V,E) ein ungerichteter Graph. Eine Knotenmenge $V' \subseteq V $heißt dominierend, falls jeder Knoten aus $V−V'$ durch eine Kante mit einem Knoten in $V'$ verbunden ist. Es sei DOMINATING-SET = \{$\langle G,k\rangle$ | G besitzt eine dominierende Knotenmenge der Gr\"oße $k$\} und VERTEX-COVER = \{$\langle G,k\rangle$ | G besitzt eine Knotenmenge $V' \subseteq V mit |V'| = k,$ so dass f\"ur jede Kante mindestens einer der Endknoten zu $V'$ geh\"ort\}. Zeigen Sie	VERTEX-COVER $\preceq_P$ DOMINATING-SET.}
-	~
-	\subsubsection{Zeigen Sie, dass die Sprache LARGEST-SIMPLE-CYCLE = {$\langle G,k\rangle$| G ist ein einfacher ungerichteter Graph, der einen einfachen Kreis mit $k $Knoten besitzt} eine NP-vollst\"andige Sprache ist. Sie d\"urfen dabei alle NP-vollst\"andigen Sprachen benutzen, von denen wir in den Vorlesungen und den ¨Ubungen nachgewiesen haben, dass sie NP-vollst\"andig sind.}
-	~
-	\subsubsection{Zeigen Sie, dass sich NAE-3-SAT = \{$\langle \Phi\rangle| \Phi$ ist eine Boolesche Formel in konjunktiver Normalform, in der alle Klauseln aus genau 3 Literalen bestehen und f¨ur die es eine Belegung der Variablen gibt, bei der die Formel erf\"ullt ist und in jeder Klausel mindestens ein Literal nicht erf\"ullt wird\} in Polynomialzeit auf 3-F\"ARBBARKEIT = \{$\langle G\rangle | G ist$ 3-knotenf\"arbbar\} reduzieren l\"asst: Geben Sie an, wie man zu einer Booleschen Formel in 3-KNF einen Graphen G( ) konstruiert, so dass die Knoten von G( ) genau dann mit drei Farben legal gef\"arbt werden k\"onnen, wenn NAE-erf\"ullbar ist, und weisen Sie diese Eigenschaft nach. Auf den Nachweis der Polynomialzeit d\"urfen Sie verzichten.}
-	~
-	\subsubsection{Sei G = (V,E) ein einfacher ungerichteter Graph. Ein aufspannender Baum von G ist ein Teilgraph G' = (V,E') mit E' $\subseteq$ E, der einen Baum bildet, der alle Knoten in V verbindet. Ein Hamilton-Pfad in G ist ein einfacher Pfad, bei dem jeder Knoten genau einmal besucht wird. Die Sprache HAMILTON-PFAD = \{$\langle G,\rangle| G$ ist ein einfacher ungerichteter Graph, der einen Hamilton-Pfad besitzt\} ist NP-vollst¨andig. Zeigen Sie, dass ISOMORPHIC-SPANNING-TREE = \{$\langle G,T\rangle| T$ ist ein Baum und G ist ein einfacher ungerichteter Graph, der einen aufspannenden Baum besitzt, der zu T isomorph ist\} eine NP-vollst¨andige Sprache ist.}
+	\section{Reduktion}
 	
-	\subsection{Primitive Rekursion}
+	\subsection{Zeigen Sie, dass die Sprache LARGEST-SIMPLE-CYCLE = $\{\langle G,k\rangle$ | G ist ein einfacher ungerichteter Graph, der einen einfachen Kreis mit $k$ Knoten besitzt\} eine NP-vollst\"andige Sprache ist. Sie d\"urfen dabei alle NPvollst\"andigen Sprachen benutzen, von denen wir in den Vorlesungen und den \"Ubungen nachgewiesen haben,	dass sie NP-vollst\"andig sind.}
+	~
+	\subsection{Zeigen Sie, dass SET-COVER = $\{\langle U,\mathcal{F},k\rangle | \exists \mathcal{C} \subseteq \mathcal{F}, |\mathcal{C}| = k,~ mit~ \wbigcup_{c \in \mathcal{C}} = U\}$ NP-vollst\"andig ist.\\ Hinweis: Reduzieren Sie VERTEX-COVER auf SET-COVER.}
+	~
+	\subsection{Ein Hamilton-Pfad ist ein einfacher Pfad, bei dem jeder Knoten eines Graphen genau einmal besucht wird. Die Sprache HAMILTON-PFAD = \{$\langle G\rangle$ | G ist ein einfacher ungerichteter Graph, der einen Hamilton-Pfad besitzt\} ist NP-vollst\"andig. Zeigen Sie, dass die Sprache LONGEST-PATH = \{$\langle G,k\rangle$ | G ist ein einfacher ungerichteter Graph, der einen einfachen Pfad der L\"ange mindestens $k$ besitzt\} eine NP-vollst\"andige Sprache ist.}
+	~
+	\subsection{Zeigen Sie, dass die Sprache SET-SPLITTING = \{$\langle S,C\rangle$ | S ist eine endliche Menge und C = \{$C_1$, . . . ,$C_k$\} ist	eine Familie von $k$ \textgreater 0 Teilmengen von S und man kann die Elemente von S jeweils weiß oder blau einf\"arben, so dass in keiner Teilmenge $C_i$ aus C alle Elemente die gleiche Farbe haben\} eine NP-vollst\"andige Sprache ist, indem Sie NAE-3-SAT auf SET-SPLITTING reduzieren.}
+	~
+	\subsection{Sei HALF-CLIQUE = \{$\langle G\rangle$ | G = (V,E) ist ein ungerichteter Graph und es gibt eine Teilmenge $V' \subseteq V mit |V'| \geq \frac{|V|}{2} $, so dass f\"ur alle $v_i , v_j \in V', v_i \not= v_j $ gilt, dass die Kante zwischen $v_i$ und $v_j$ zu E geh\"ort\}. Zeigen Sie, dass HALF-CLIQUE eine NP-vollst\"andige Sprache ist.\\ Hinweis: Zeigen Sie CLIQUE $\preceq_P$ HALF-CLIQUE.}
+	~
+	\subsection{Sei G = (V,E) ein ungerichteter Graph. Eine Knotenmenge $V' \subseteq V $heißt dominierend, falls jeder Knoten aus $V−V'$ durch eine Kante mit einem Knoten in $V'$ verbunden ist. Es sei DOMINATING-SET = \{$\langle G,k\rangle$ | G besitzt eine dominierende Knotenmenge der Gr\"oße $k$\} und VERTEX-COVER = \{$\langle G,k\rangle$ | G besitzt eine Knotenmenge $V' \subseteq V mit |V'| = k,$ so dass f\"ur jede Kante mindestens einer der Endknoten zu $V'$ geh\"ort\}. Zeigen Sie	VERTEX-COVER $\preceq_P$ DOMINATING-SET.}
+	~
+	\subsection{Zeigen Sie, dass die Sprache LARGEST-SIMPLE-CYCLE = {$\langle G,k\rangle$| G ist ein einfacher ungerichteter Graph, der einen einfachen Kreis mit $k $Knoten besitzt} eine NP-vollst\"andige Sprache ist. Sie d\"urfen dabei alle NP-vollst\"andigen Sprachen benutzen, von denen wir in den Vorlesungen und den ¨Ubungen nachgewiesen haben, dass sie NP-vollst\"andig sind.}
+	~
+	\subsection{Zeigen Sie, dass sich NAE-3-SAT = \{$\langle \Phi\rangle| \Phi$ ist eine Boolesche Formel in konjunktiver Normalform, in der alle Klauseln aus genau 3 Literalen bestehen und f¨ur die es eine Belegung der Variablen gibt, bei der die Formel erf\"ullt ist und in jeder Klausel mindestens ein Literal nicht erf\"ullt wird\} in Polynomialzeit auf 3-F\"ARBBARKEIT = \{$\langle G\rangle | ~G~ ist~$ 3-knotenf\"arbbar\} reduzieren l\"asst: Geben Sie an, wie man zu einer Booleschen Formel in 3-KNF einen Graphen G konstruiert, so dass die Knoten von G genau dann mit drei Farben legal gef\"arbt werden k\"onnen, wenn NAE-erf\"ullbar ist, und weisen Sie diese Eigenschaft nach. Auf den Nachweis der Polynomialzeit d\"urfen Sie verzichten.}
+	~
+	\subsection{Sei G = (V,E) ein einfacher ungerichteter Graph. Ein aufspannender Baum von G ist ein Teilgraph G' = (V,E') mit E' $\subseteq$ E, der einen Baum bildet, der alle Knoten in V verbindet. Ein Hamilton-Pfad in G ist ein einfacher Pfad, bei dem jeder Knoten genau einmal besucht wird. Die Sprache HAMILTON-PFAD = \{$\langle G,\rangle| G$ ist ein einfacher ungerichteter Graph, der einen Hamilton-Pfad besitzt\} ist NP-vollst¨andig. Zeigen Sie, dass ISOMORPHIC-SPANNING-TREE = \{$\langle G,T\rangle| T$ ist ein Baum und G ist ein einfacher ungerichteter Graph, der einen aufspannenden Baum besitzt, der zu T isomorph ist\} eine NP-vollst¨andige Sprache ist.}
 	
+	\section{Loop- und While-Berechenbarkeit}
 	\soon
 	
-	\subsection{Loop- und While-Berechenbarkeit}
+	\section{Primitive Rekursion}
 	\soon
-	
 	
 	% Solution 
 \end{document}
