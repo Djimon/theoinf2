@@ -1,5 +1,9 @@
+%XXXXX INFO XXXXXX
+% Lernhilfe für TheoInf2 Mit und ohne Lösungen*
 \newif\ifanswers
-\answerstrue % comment out to hide answers
+\answerstrue % mit "%" auskommentieren, wenn ohne Lösung* gewünscht ist
+% * Auf die korrektheit der Lösungen gibt es keine Garantie
+
 %\documentclass{article}
 \documentclass[a4paper,12pt]{article}
 % Seitenränder in schön für Steven
@@ -48,36 +52,60 @@
 
 \begin{document}	 
 	\maketitle	 %Some Vodoo-magic
+\subsection{Allgemeines}
+
+	$REG \subset DCF \subset CF \subset P \subseteq NP \subseteq PSPACE = NPSPACE \subseteq EXP \subseteq REK  \subset RE$ \\
+	$PO \subset FPTAS \subseteq PTAS \subset APX \subset NPO$ \\
+	
+	\textbf{Abschlusseigenschaften}\\
+	\begin{tabular}{l|ccccccc}
+		~ & Kompl. & Schnitt & Vereing. & Konkat. & Kleene-* & Spiegel. & Differenz \\
+		Sprache (Abk.) & $\overline{L}$ & $\cap$ & $\cup$ & $\cdot$ & $\ast$ & $L^R$ & $L_1/L_2$ \\ \hline
+		regul\"ar (R) & \true & \true & \true & \true & \true & \true & \true \\
+		det. kontextfrei (dCF) & \true & \false (R) & \false & \false & \false & \false & \false  \\
+		kontextfrei (CF) & \false & \false (R) & \true & \true & \true  & \true & \false \\
+		kontextsensitiv (CS) & \true & \true & \true & \true & \true & ? & ? \\
+		rekursiv aufz\"ahlbar (RE) & \false & \true & \true & \true & \true & ? & ? \\
+	\end{tabular}
 	
 	% \ifanswers \radio \else $\ocircle$ \fi  % Punkt in richtiger Antwort
 	\section{wahr - falsch - Fragen}
 	\begin{tabular}{ccp{0.85\textwidth}}
 		\textbf{wahr} & \textbf{falsch} & ~ \\
-%		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & \textit{Beispielfrage, falsch ist richtig} \\
-%		\ifanswers \multicolumn{3}{l}{\textcolor{red}{Begr\"undung der Antwort}} \fi \\ \\
 		
+%		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & \textit{Beispielfrage, falsch ist richtig} \\
+%		\ifanswers \multicolumn{3}{l}{\textcolor{red}{Begr\"undung der Antwort}} \fi \\ 		
 		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Falls $P \not= NP$, so gibt es keinen Polynomialzeitalgorithmus, der f\"ur das Knotenf\"arbungsproblem	Approximationsg\"ute kleiner als $\frac{4}{3}$ erreicht.\\ 
 		\answer{wenn das gehen würde hätte man einen PTIME Algorithmus gefunden für 3-Coloring $\Rightarrow$ P=NP} 
 		
 		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Die Klasse der deterministisch kontextfreien Sprachen ist unter Komplementbildung nicht abgeschlossen \\
 		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Jede \textbf{while}-berechenbare Funktion ist auch \textbf{loop}-berechenbar\\
 		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & FPTAS $\subseteq$ APX\\
-		$\ocircle$ & $\ocircle$ & In jeder Kleene Algebra K gilt a** = a* f¨ur alle a $\in \mathds{K}$.\\
-%		$\ocircle$ & $\ocircle$ & Es gibt eine regul\"are Sprache L, so dass LL $\not=$ L.\\
-		$\ocircle$ & $\ocircle$ & Es gibt eine regul\"are Sprache L*, sodass L*L* $\not= $ L* \\
-		$\ocircle$ & $\ocircle$ & F\"ur jede von einer rechtslinearen Grammatik erzeugte Sprache L besitzt $\approx_L$ unendlich viele \"Aquivalenzklassen\\
-		$\ocircle$ & $\ocircle$ & Die Klasse der kontextfreien Sprachen ist abgeschlossen unter Substitution durch regul\"are Sprachen\\
-		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & In jeder Kleene Algebra $\mathds{K}$ gilt 1 + a* = a* f\"ur alle $a \in \mathds{K}$\\
+%		$\ocircle$ & $\ocircle$ & In jeder Kleene Algebra K gilt a** = a* f¨ur alle a $\in \mathds{K}$.\\
+%		$\ocircle$ & $\ocircle$ & Es gibt eine regul\"are Sprache L*, sodass L*L* $\not= $ L* \\
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & F\"ur jede von einer rechtslinearen Grammatik erzeugte Sprache L besitzt $\approx_L$ unendlich viele \"Aquivalenzklassen\\
+		\answer{Es gibt eine rechtslineare Grammatik, die L	erzeugt $\leftrightarrow$ $\approx_L$	besitzt endlich viele \"Aquivalenzklassen}
+		
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Die Klasse der kontextfreien Sprachen ist abgeschlossen unter Substitution durch regul\"are Sprachen\\
+%		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & In jeder Kleene Algebra $\mathds{K}$ gilt 1 + a* = a* f\"ur alle $a \in \mathds{K}$\\
 		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Das Halteproblem ist festparameterhandhabbar\\
+		\answer{das Halteproblem ist nicht mal entscheidbar}
+		
 		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Jede \textbf{loop}-berechenbare Funktion ist auch durch eine Grammatik berechenbar.\\
 		\answer{Gramatikberechenbar $\Rightarrow$ while-berechenbar also auch loop}
 		
 		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Es gibt \textbf{while}-berechenbare Funktionen, die nicht Turing-berechenbar sind.\\
 		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Es gibt regul\"are Sprachen, die nicht deterministisch kontextfrei sind.\\
 		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & F\"ur jede Sprache L stimmen die \"Aquivalenzklassen von $\approx_L$ mit denen von $\approx_{\overline{L}}$ \"uberein.\\ 
-		\answer{s. \"Ubung 12.3}
+		\answer{wurde in \"Ubung 12.3 gezeigt}
 		
-		$\ocircle$ & $\ocircle$ & Der Schnitt zweier deterministisch kontextfreier Sprachen ist stets eine kontextfreie Sprache.\\
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Der Schnitt zweier deterministisch kontextfreier Sprachen ist stets eine kontextfreie Sprache.\\
+				
+	\end{tabular}
+\newpage ~\\
+	\begin{tabular}{ccp{0.9\textwidth}}
+		\textbf{wahr} & \textbf{falsch} & ~ \\
+		
 		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Es gibt \textbf{loop}-berechenbare Funktionen, die nicht durch eine Grammatik berechenbar sind.\\
 		\answer{Gramatikberechenbar $\leftrightarrow$ while-berechenbar \textgreater loop-berechenbar}
 		
@@ -89,23 +117,24 @@
 		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Die Sprache POSITIVE-3-SAT = \{$\langle\Phi\rangle$| $\Phi$ ist eine Boolesche Formel in konjunktiver Normalform, in der alle Klauseln aus genau 3 Literalen bestehen und in der keine Variable negiert vorkommt und f\"ur die es eine erf\"ullende Belegung der Variablen gibt\} ist eine NP-vollst\"andige Sprache.\\ 
 		\answer{positiv-3-sat liegt in P, dann wäre P = NP}
 		
-		$\ocircle$ &\ifanswers \radio \else $\ocircle$ \fi & Die Klasse der deterministisch kontextfreien Sprachen ist abgeschlossen unter Schnitt.\\		
-	\end{tabular}
-\newpage ~\\
-	\begin{tabular}{ccp{0.9\textwidth}}
-		\textbf{wahr} & \textbf{falsch} & ~ \\
+		$\ocircle$ &\ifanswers \radio \else $\ocircle$ \fi & Die Klasse der deterministisch kontextfreien Sprachen ist abgeschlossen unter Schnitt.\\
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Jede \textbf{while}-berechenbare Funktion ist eine primitiv rekursive Funktion.\\
+		\answer{while-berechenbar $\approx$ $\mu$-rekursiv }
 		
-		$\ocircle$ & $\ocircle$ & Jede \textbf{while}-berechenbare Funktion ist eine primitiv rekursive Funktion.\\
 		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & PO $\subseteq$ APX.\\
-		$\ocircle$ & $\ocircle$ & Es gibt ein Alphabet $\sum$ und Sprachen M,N $\subseteq \sum^*$, so dass $(M^*N)^*M^*$ $\not=$ $(M \bigcup N)^*$.\\
-		$\ocircle$ & $\ocircle$ & Jede durch eine Grammatik berechenbare Funktion ist \textbf{loop}-berechenbar.\\
+%		$\ocircle$ & $\ocircle$ & Es gibt ein Alphabet $\sum$ und Sprachen M,N $\subseteq \sum^*$, so dass $(M^*N)^*M^*$ $\not=$ $(M \bigcup N)^*$.\\
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Jede durch eine Grammatik berechenbare Funktion ist \textbf{loop}-berechenbar.\\
+		\answer{grammatik-berechenbar $\approx$ while-berechenbar}
+		
 		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Es gibt berechenbare Funktionen, die nicht primitiv rekursiv sind.\\
 		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & SET-COVER $\in$ PSPACE\\ 
 		\answer{NP $\subseteq$ PSPACE}
 		
 		$\ocircle$ & $\ocircle$ & MAX-CUT $\preceq_P$ TQBF\\
 		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Die Klasse der kontextfreien Sprachen ist abgeschlossen unter Quotientenbildung.\\
-		$\ocircle$ & $\ocircle$ & Es gibt deterministisch kontextfreie Sprachen, die nicht in PSPACE enthalten sind.\\
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Es gibt deterministisch kontextfreie Sprachen, die nicht in PSPACE enthalten sind.\\
+		\answer{$DCF \subset NP \subseteq PSPACE$}
+		
 		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Falls B $\in$ PSPACE und A $\preceq_P$ B, so gilt auch A $\in$ PSPACE.\\ 
 		\answer{man kann alles aus A in PTime in B umwandeln und kann das dann in PSpace lösen}
 		
@@ -113,43 +142,42 @@
 		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Jede durch eine Grammatik berechenbare Funktion ist auch \textbf{loop}-berechenbar.\\ 
 		\answer{Gramatik-berechenbar $\leftrightarrow$ while-berechenbar \textgreater loop-berechenbar}
 		
-		$\ocircle$ & $\ocircle$ & Es gibt zwei regul\"are Sprachen, deren Vereinigung nicht deterministisch kontextfrei ist.\\
+		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Es gibt zwei regul\"are Sprachen, deren Vereinigung nicht deterministisch kontextfrei ist.\\
+		\answer{REG abgeschlossen unter Vereinigung, REG $\subset$ DTC}
+		
 		$\ocircle$ & $\ocircle$ & Sei $\sum = \{a, b\}$ und sei $\mathcal{L} = \{a^nb^n | n \geq 1\}$. Dann ist $[a]_{\approx_L} = \mathcal{L}(a^∗)$.\\
+		
 		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Sei $L = \{a^nb^n | n \geq 1\}$. Dann ist $a^8b^{17}a^9 \in cyc(L).$\\ 
 		\answer{weil $a^{17} b^{17} = w_1w_2, w_2= a^8 b^{17}, w_1=a^9, cyc(L)=\{ w_2w_1 | w_1w_2 \in L\}$}
 		
 		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Die Sprache \{$a^ib^ic^k | i, k \geq 1$\} $\bigcup$ \{$b^jc^j | j \geq $\} ist deterministisch kontextfrei.\\ 
 		\answer{dafür kann man einen deterministischen Kellerautomaten angeben}
 		
-		$\ocircle$ & $\ocircle$ & NAE-3-SAT $\in$ NPSPACE.\\
+		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & NAE-3-SAT $\in$ NPSPACE.\\
+		\answer{NAE-3-SAT $in$ NP $\subseteq$ NPSAPCE}
+		
 		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Jede $\mu$-rekursive Funktion ist eine \textbf{loop}-berechenbare Funktion.\\
 		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & Falls L eine PSPACE-vollst\"andige Sprache ist, so ist L auch NP-hart.\\ 
 		\answer{NP $\subseteq$ PSPACE}
 		
 		$\ocircle$ & \ifanswers \radio \else $\ocircle$ \fi & Falls L deterministisch kontextfrei ist, so ist auch $L^R$ deterministisch kontextfrei.\\
+	\end{tabular}
+\newpage ~\\
+	\begin{tabular}{ccp{0.9\textwidth}}
+		\textbf{wahr} & \textbf{falsch} & ~ \\
+		
 		\ifanswers \radio \else $\ocircle$ \fi & $\ocircle$ & F¨ur jede \textbf{while}-berechenbare Funktion gibt es ein \textbf{while}-Programm mit nur einer \textbf{while}-Schleife.\\
 		$\ocircle$ &\ifanswers \radio \else $\ocircle$ \fi & Die Klasse der deterministisch kontextfreien Sprachen ist abgeschlossen unter Vereiningung.\\
 		$\ocircle$ & $\ocircle$ & Es gibt eine (totale) berechenbare Funktion, die nicht primitiv rekursiv ist.\\
-		$\ocircle$ & $\ocircle$ & F\"ur w$\in$\{0,1\} sei K(w) die Kolmogorov-Komplexit\"at von w. Es gibt ein n $\in$ N, so dass f\"ur alle w $\in$ \{0, 1\} mit$ |w| \geq n$ gilt: $K(w) \leq 2|w|$\\
+%		$\ocircle$ & $\ocircle$ & F\"ur w$\in$\{0,1\} sei K(w) die 						Kolmogorov-Komplexit\"at von w. Es gibt ein n $\in$ N, so dass f\"ur alle w $\in$ \{0, 1\} mit$ |w| \geq n$ gilt: $K(w) \leq 2|w|$\\
+
 %		$\ocircle$ & $\ocircle$ & \\
 	\end{tabular}
 	% Solution
-	\begin{table}[b!]
-		\centering
-		\caption{Abschlusseigenschaften verschiedener Sprachen}
-		\begin{tabular}{l|ccccccc}
-			~ & Kompl. & Schnitt & Vereing. & Konkat. & Kleene-* & Spiegel. & Differenz \\
-			Sprache (Abk.) & $\overline{L}$ & $\cap$ & $\cup$ & $\cdot$ & $\ast$ & $L^R$ & $L_1/L_2$ \\ \hline
-			regul\"ar (R) & \true & \true & \true & \true & \true & \true & \true \\
-			det. kontextfrei (dCF) & \true & \false (R) & \false & \false & \false & \false & \false  \\
-			kontextfrei (CF) & \false & \false (R) & \true & \true & \true  & \true & \false \\
-			kontextsensitiv (CS) & \true & \true & \true & \true & \true & ? & ? \\
-			rekursiv aufz\"ahlbar (RE) & \false & \true & \true & \true & \true & ? & ? \\
-		\end{tabular}
-	\end{table}
-	
 	
 	\section{Reduktion}
+	
+	"Sei $L \subseteq \Sigma^*$ und $S \not\in \Sigma$. Falls $LS$ eine deterministisch kontextfreie Sprache ist, so ist auch $L$ eine deterministisch kontextfreie Sprache.
 	
 	\subsection{Zeigen Sie, dass die Sprache LARGEST-SIMPLE-CYCLE = $\{\langle G,k\rangle$ | G ist ein einfacher ungerichteter Graph, der einen einfachen Kreis mit $k$ Knoten besitzt\} eine NP-vollst\"andige Sprache ist. Sie d\"urfen dabei alle NPvollst\"andigen Sprachen benutzen, von denen wir in den Vorlesungen und den \"Ubungen nachgewiesen haben,	dass sie NP-vollst\"andig sind.}
 	~
